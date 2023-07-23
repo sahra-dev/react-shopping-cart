@@ -4,7 +4,7 @@ import styles from './navigation.module.css'
 const Navigation = () => {
   return (
     <header className={styles.mainHeader}>
-        <h2>Shopping</h2>
+        <h2>SaHRa Shopping</h2>
       <nav>
         <ul>
           <li>
