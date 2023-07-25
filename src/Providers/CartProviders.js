@@ -6,22 +6,22 @@ const CartContextDispatcher = createContext()
 
 const initialState = {
   cart: [
-    // {
-    //   id: 2,
-    //   qty: 5,
-    //   name: 'Adidas',
-    //   description: [
-    //     { support: 'گارانتی مادام العمر' },
-    //     { support: 'اورجینال' },
-    //   ],
-    //   price: 110,
-    //   offPrice: 100,
-    //   discount: 8,
-    //   image:
-    //     'https://s6.uupload.ir/files/andres-jasso-pqbl_mxmaue-unsplash_gkir.jpg',
-    // },
+    {
+      id: 2,
+      qty: 5,
+      name: 'Adidas',
+      description: [
+        { support: 'گارانتی مادام العمر' },
+        { support: 'اورجینال' },
+      ],
+      price: 110,
+      offPrice: 100,
+      discount: 8,
+      image:
+        'https://s6.uupload.ir/files/andres-jasso-pqbl_mxmaue-unsplash_gkir.jpg',
+    },
   ],
-  total: 0,
+  total: 5,
 }
 const CartProvider = ({ children }) => {
   const [cart, dispatch] = useReducer(cartReducer, initialState)

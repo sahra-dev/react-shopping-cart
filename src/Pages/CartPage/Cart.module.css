@@ -146,7 +146,7 @@
 }
 .cartTotal {
   width: 100%;
-  height: 15rem;
+  height: 18rem;
   margin-right: 2rem;
   border: 2px solid gray;
   border-radius: 2rem;
@@ -158,6 +158,12 @@
   justify-content: space-between;
   align-items: flex-start;
   font-family: 'Baloo';
+}
+.cartTotal .totalPrice{
+  width: 100%;
+  border-top: 1px solid gray;
+  padding: 1rem;
+  color: #52525b;
 }
 .cartTotalBtn {
   all: unset;
@@ -171,6 +177,11 @@
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
+}
+.cartTotalBtn a {
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 .cartTotalBtn:hover{
   color: #fff;
@@ -196,7 +207,7 @@
 }
 @media screen and (max-width: 700px) {
   .cartTotal {
-    height: 14rem;
+    height: 16rem;
   }
   .cartTitle {
     font-size: 1.8rem;
@@ -206,7 +217,7 @@
   }
   .productCartDesc,
   .priceSection {
-    width: 7rem;
+    width: 13rem;
     text-align: center;
   }
   .productCartDesc .productName {
@@ -253,5 +264,13 @@
   }
   .cartTotalBtn {
     font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 500px){
+
+  .productCartDesc,
+  .priceSection {
+    width: 7rem;
+    text-align: center;
   }
 }

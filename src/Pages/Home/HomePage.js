@@ -3,7 +3,7 @@ import * as data from '../../data'
 import style from './HomePage.module.css'
 import { useCart, useCartActions } from '../../Providers/CartProviders'
 import checkInCart from '../../utils/checkInCart'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { useHistory } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -14,6 +14,11 @@ const HomePage = () => {
     dispatch({ type: 'ADD_TO_CART', payload: product })
     toast.success('سفارش شما ثبت شد')
   }
+  const history = useHistory()
+  const linkToCartPage = ()=>{
+    history.push('/cart')
+  }
+  
   return (
     <Layout>
       <span className={style.toastify}>
@@ -28,15 +33,23 @@ const HomePage = () => {
               </div>
               <div className={style.productDesc}>
                 <div className={style.productName}>{product.name}</div>
-                <div className={style.productPrice}>{product.price} $</div>
+                <div className={style.productPrice}>
+                  <span className={(product.discount>0) ? style.through : ""}>{product.price} $</span>
+                  {
+                  (product.discount >0) ? 
+                  <>
+                  <span className={style.discount}>{product.discount}%</span>
+                  <span className={style.productPrice}>{product.offPrice} $</span> 
+                 </>: ''}
+                  </div>
               </div>
               <button
-                className={style.productBtn}
-                onClick={() => addProducthandler(product)}
+              className={style.productBtn}
+                onClick={checkInCart(cart,product) ? ()=> linkToCartPage() :() => addProducthandler(product)}
               >
                 {checkInCart(cart, product) ? (
-                  <span>
-                    <Link to="/cart">ادامه سفارشات</Link>
+                 <span>
+                  ادامه سفارشات
                   </span>
                 ) : (
                   <span> اضافه به سبد خرید </span>

@@ -22,14 +22,15 @@ li {
 a {
   color: gray;
   text-decoration: none;
-  padding: 0.3rem 1.5rem;
-  border-radius: 0.2rem;
+  padding: 0.3rem 1rem;
+  border-radius: 0.2rem;  
 }
 .activeLink {
   background-color: #fff;
 }
 .activeLink span{
-  background-color: transparent;
+  transform: translate(7rem , -3.8rem);
+
 }
 h2 {
   font-size: 2.5rem;
@@ -38,19 +39,50 @@ h2 {
   text-shadow: 1px 1px 4px #000;
 }
 a span {
-  width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  height: 2rem;
   background-color: #fff;
   border-radius: 100%;
   padding: 0.1rem 0.7rem;
-
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(8rem,-2.5rem);
+  transition: all 1s;
 }
-
+.loginSignUp{
+  cursor: pointer;
+  width: 13rem;
+  height: 3rem;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 3rem;
+  font-family: 'Baloo';
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginSignUp:hover{
+  color: #3b3b3b;
+}
 @media screen and (max-width: 600px) {
   h2 {
     font-size: 1.9rem;
   }
   li {
     font-size: 1.2rem;
+  }
+  .activeLink span{
+    transform: translate(6rem , -3.5rem);
+  }
+  a span{
+    transform: translate(6rem,-2rem);
+  }
+  .loginSignUp{
+    width: 11rem;
+    left: 1rem;
+    font-size: 1.1rem;
   }
 }
