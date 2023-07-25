@@ -34,7 +34,7 @@
   align-items: flex-start;
 }
 .productCart {
-  height: 12rem;
+  height: 14rem;
   width: 100%;
   background-color: transparent;
   display: flex;
@@ -172,10 +172,15 @@
   align-items: center;
   border-radius: 0.5rem;
 }
-.cartTotalBtn:hover {
+.cartTotalBtn:hover{
   color: #fff;
   background-color: #52525b;
 }
+.cartTotalBtn:focus{
+  color: #fff;
+  background-color: #52525b;
+}
+
 @media screen and (max-width: 1000px) {
   .cartBodyStyle {
     flex-direction: column;
@@ -195,6 +200,9 @@
   }
   .cartTitle {
     font-size: 1.8rem;
+  }
+  .productCart {
+    height: 12rem;
   }
   .productCartDesc,
   .priceSection {

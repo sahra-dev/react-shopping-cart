@@ -1,12 +1,33 @@
-import { useCart } from '../../Providers/CartProviders'
+import { useCart, useCartActions } from '../../Providers/CartProviders'
 import Layout from '../../components/Layout/Layout'
 import style from './Cart.module.css'
 import { BsFillTrash3Fill, BsFillCartCheckFill } from 'react-icons/bs'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
+import { useEffect } from 'react'
 
 const Cart = () => {
-  const { cart } = useCart()
-  console.log(cart)
+  const { cart , total } = useCart()
+  const dispatch = useCartActions()
+  const incProductHandler = (product)=>{
+    dispatch({type : 'ADD_TO_CART' , payload: product})
+  }
+  const decProductHandler = (product) =>{
+    dispatch({type : 'DECREASE_ITEM_IN_CART' , payload: product})
+  }
+  const deleteHandler = (product)=>{
+    dispatch({type : 'DELETE_ITEM_IN_CART' , payload: product})
+  }
+  const totalPricecalculating = ()=>{
+    let total = 0
+    cart.map( p => {
+      const oneItem = p.qty * p.offPrice
+      total += oneItem
+    })
+    return total
+  }
+  useEffect(()=>{
+    totalPricecalculating()
+  },[cart])
   return (
     <Layout>
       <div className={style.cartBody}>
@@ -38,34 +59,42 @@ const Cart = () => {
                         <div className={style.priceSection}>
                           {product.discount > 0 ? (
                             <div
-                              className={style.priceSectionPriceWithDiscount} >
+                              className={style.priceSectionPriceWithDiscount}
+                            >
                               {product.offPrice * product.qty}$
                             </div>
-                          ) : ''}
+                          ) : (
+                            ''
+                          )}
                           <div
                             className={`${style.priceSectionPrice} ${
                               product.discount > 0
                                 ? style.priceSectionPriceLine
-                                : '' } `}>
+                                : ''
+                            } `}
+                          >
                             {product.price * product.qty}$
                           </div>
-                          {product.discount > 0 ?
+                          {product.discount > 0 ? (
                             <div className={style.priceSectionDiscount}>
                               {product.discount}%
-                            </div>: ""}
+                            </div>
+                          ) : (
+                            ''
+                          )}
                         </div>
                       </span>
                       <div className={style.productCartBtns}>
-                      <button className={style.btnInc}>
+                        <button className={style.btnInc} onClick={()=>incProductHandler(product)}>
                           <AiOutlinePlus className={style.incBtn} />
                         </button>
                         <span className={style.productCartBtnsQty}>
                           {product.qty}
                         </span>
-                        <button className={style.btnDec}>
+                        <button className={style.btnDec} onClick={()=> decProductHandler(product)}>
                           <AiOutlineMinus className={style.decBtn} />
                         </button>
-                        <button className={style.btnDelete}>
+                        <button className={style.btnDelete} onClick={()=> deleteHandler(product)}>
                           <BsFillTrash3Fill className={style.deleteBtn} />
                         </button>
                       </div>
@@ -74,8 +103,8 @@ const Cart = () => {
                 })}
               </div>
               <section className={style.cartTotal}>
-                <div> تعداد محصولات در سبد خرید : 0 </div>
-                <div> قیمت قابل پرداخت  :  $100 </div>
+                <div> تعداد محصولات در سبد خرید : {total} </div>
+                <div> قیمت قابل پرداخت : $ {totalPricecalculating()} </div>
                 <button className={style.cartTotalBtn}>
                   ثبت سفارش <BsFillCartCheckFill />
                 </button>

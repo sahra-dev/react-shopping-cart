@@ -44,22 +44,30 @@ min-width:21rem;
 .productBtn {
   all: unset;
   cursor: pointer;
-  width: 8rem;
+  width: 70%;
   height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #a1a1aa;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   border-radius: 1rem;
   margin-top: 1rem;
   padding: 0.2rem 0.5rem;
   font-weight: 500;
+  font-family: 'Baloo';
+}
+.productBtn span a {
+  color: #fff;
 }
 .productBtn:hover {
   background-color: #71717a;
   color: #fff;
+}
+.toastify{
+  font-size: 1.5rem;
+  font-family: 'Baloo';
 }
 @media screen and (max-width : 600px) {
     .productsBody {
@@ -73,9 +81,9 @@ min-width:21rem;
         height: 19rem;
       }
       .productBtn {
-        width: 6rem;
+        width: 70%;
         height: 2rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       .productDesc {
         width: 80%;
