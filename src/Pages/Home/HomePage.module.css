@@ -1,6 +1,6 @@
 .productsBody {
   padding: 2rem 5rem;
-  height: auto;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(21rem,1fr));
   grid-column-gap: 2rem;
@@ -49,7 +49,7 @@ min-width:21rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e879f9;
+  background-color: #a1a1aa;
   color: #fff;
   font-size: 1.3rem;
   border-radius: 1rem;
@@ -58,7 +58,7 @@ min-width:21rem;
   font-weight: 500;
 }
 .productBtn:hover {
-  background-color: #86198f;
+  background-color: #71717a;
   color: #fff;
 }
 @media screen and (max-width : 600px) {

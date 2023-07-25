@@ -1,10 +1,13 @@
-import Layout from '../../Layout/Layout'
+import Layout from '../../components/Layout/Layout'
 import * as data from '../../data'
 import style from './HomePage.module.css'
+import {useCartActions} from '../../Providers/CartProviders'
 
 const HomePage = () => {
-  const addProducthandler = (id) =>{
-    console.log(id);
+  const dispatch = useCartActions()
+  const addProducthandler = (product) => {
+    console.log(product.id)
+    dispatch({type : 'ADD_TO_CART' , payload: product})
   }
   return (
     <Layout>
@@ -19,7 +22,12 @@ const HomePage = () => {
                 <div className={style.productName}>{product.name}</div>
                 <div className={style.productPrice}>{product.price} $</div>
               </div>
-              <button className={style.productBtn} onClick={()=>addProducthandler(product.id)}>Add to Cart</button>
+              <button
+                className={style.productBtn}
+                onClick={() => addProducthandler(product)}
+              >
+                Add to Cart
+              </button>
             </div>
           )
         })}

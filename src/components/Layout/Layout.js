@@ -1,4 +1,4 @@
-import Navigation from "../components/Navigation/Navigation";
+import Navigation from "../Navigation/Navigation";
 import style from './Layout.module.css'
 
 const Layout = ({children}) => {

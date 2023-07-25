@@ -1,0 +1,249 @@
+.cartBody {
+  width: 95%;
+  max-width: 1024px;
+  padding: 2rem;
+  height: 100%;
+  background-color: #e2e2e2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 0 0 2rem 2rem;
+  margin-bottom: 5rem;
+  direction: rtl;
+}
+.cartBodyStyle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.cartTitle {
+  font-size: 2.5rem;
+  color: #fff;
+  font-family: 'Baloo';
+  text-shadow: 2px 2px 5px #000;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.productsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.productCart {
+  height: 12rem;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 2rem;
+}
+.productCart span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productCartImg {
+  width: 9rem;
+  height: 9rem;
+}
+.productCartImg img {
+  width: 9rem;
+  height: 9rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.productCartDesc,
+.priceSection {
+  font-family: 'Baloo';
+  width: 14rem;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  direction: rtl;
+}
+.productCartDesc .productName {
+  font-size: 1.9rem;
+  color: #4d4d4d;
+}
+.productCartDesc .productSupDesc {
+  font-size: 1.3rem;
+  color: gray;
+}
+.priceSectionPrice {
+  font-size: 2rem;
+  color: #3d3d3d;
+}
+.priceSectionPriceLine {
+  text-decoration: line-through;
+  font-size: 1.7rem;
+  color: gray;
+}
+.priceSectionDiscount {
+  font-size: 1.2rem;
+  color: #868686;
+}
+.priceSectionPriceWithDiscount {
+  font-size: 2rem;
+  color: #3d3d3d;
+}
+.productCartBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productCartBtns button {
+  all: unset;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+.deleteBtn {
+  color: #f87171;
+  font-size: 2rem;
+}
+.btnDelete:hover .deleteBtn {
+  color: red;
+}
+.productCartBtnsQty {
+  font-size: 1.7rem;
+  color: gray;
+}
+.incBtn {
+  font-size: 2rem;
+  color: #84cc16;
+}
+.decBtn {
+  color: #eab308;
+  font-size: 2rem;
+}
+.btnInc:hover .incBtn {
+  color: #4d7c0f;
+}
+.btnDec:hover .decBtn {
+  color: #ca8a04;
+}
+.emptyCart {
+  font-size: 1.5rem;
+  margin-top: 5rem;
+  font-family: 'Baloo';
+  color: gray;
+  margin-bottom: 3rem;
+}
+.cartTotal {
+  width: 100%;
+  height: 15rem;
+  margin-right: 2rem;
+  border: 2px solid gray;
+  border-radius: 2rem;
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: 'Baloo';
+}
+.cartTotalBtn {
+  all: unset;
+  cursor: pointer;
+  width: 100%;
+  height: 3rem;
+  font-size: 1.6rem;
+  border: 1px solid #52525b;
+  color: #52525b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+.cartTotalBtn:hover {
+  color: #fff;
+  background-color: #52525b;
+}
+@media screen and (max-width: 1000px) {
+  .cartBodyStyle {
+    flex-direction: column;
+  }
+  .cartTotal {
+    width: 95%;
+    margin: 1rem;
+    height: 18rem;
+  }
+  .productCart {
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 700px) {
+  .cartTotal {
+    height: 14rem;
+  }
+  .cartTitle {
+    font-size: 1.8rem;
+  }
+  .productCartDesc,
+  .priceSection {
+    width: 7rem;
+    text-align: center;
+  }
+  .productCartDesc .productName {
+    font-size: 1.5rem
+  }
+  .productCartDesc .productSupDesc {
+    font-size: 1rem;
+  }
+  .productCartImg {
+    width: 5rem;
+    height: 5rem;
+  }
+  .productCartImg img {
+    width: 5rem;
+    height: 5rem;
+  }
+  .priceSectionPrice {
+    font-size: 1.5rem;
+  }
+  .priceSectionPriceLine {
+    font-size: 1.3rem;
+  }
+  .priceSectionDiscount {
+    font-size: 0.9rem;
+  }
+  .priceSectionPriceWithDiscount {
+    font-size: 1.5rem;
+  }
+  .productCartBtns button {
+    width: 2rem;
+    height: 2rem;
+  }
+  .deleteBtn ,
+  .productCartBtnsQty ,
+  .incBtn ,
+  .decBtn {
+    font-size: 1.5rem;
+  }
+  .productCart{
+    padding: 0;
+  }
+  .cartTotal {
+    font-size: 1.2rem;
+  }
+  .cartTotalBtn {
+    font-size: 1.4rem;
+  }
+}
