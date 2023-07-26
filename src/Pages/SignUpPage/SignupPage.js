@@ -4,39 +4,55 @@ import Input from '../../common/Input'
 import { useFormik } from 'formik'
 import { useState } from 'react'
 import * as Yup from 'yup'
+import InputRadio from '../../common/RadioInput'
 
-const initialValues ={
-    firstName : '' ,
-    lastName : '',
-    userName:'',
-    phoneNumber: '',
-    email:'',
-    password : '',
-    passwordConfrim :''
+const initialValues = {
+  firstName: '',
+  lastName: '',
+  gender: '',
+  userName: '',
+  phoneNumber: '',
+  email: '',
+  password: '',
+  passwordConfrim: '',
 }
+const genderOption = [
+  { label: 'مرد', value: '0' },
+  { label: 'زن', value: '1' },
+]
 const validationSchema = Yup.object({
-    firstName: Yup.string().required('الزامی'),
-    lastName: Yup.string().required('الزامی'),
-    userName: Yup.string().required('الزامی').matches(/^[A-Za-z0-9]+$/ , 'غیرقابل قبول'),
-    phoneNumber: Yup.string().required('الزامی').matches(/^[0-9]{11}$/ , 'غیرقابل قبول'),
-    email: Yup.string().required('الزامی'),
-    password: Yup.string().required('الزامی').matches(/^[a-zA-Z0-9]+$/ , 'غیرقابل قبول'),
-    passwordConfrim: Yup.string().required('الزامی').oneOf([Yup.ref('password'),null],'اشتباه وارد کردید'),
+  firstName: Yup.string().required('الزامی'),
+  lastName: Yup.string().required('الزامی'),
+  gender: Yup.string().required('الزامی'),
+  userName: Yup.string()
+    .required('الزامی')
+    .matches(/^[A-Za-z0-9]+$/, 'غیرقابل قبول'),
+  phoneNumber: Yup.string()
+    .required('الزامی')
+    .matches(/^[0-9]{11}$/, 'غیرقابل قبول'),
+  email: Yup.string().required('الزامی'),
+  password: Yup.string()
+    .required('الزامی')
+    .matches(/^[a-zA-Z0-9]+$/, 'غیرقابل قبول'),
+  passwordConfrim: Yup.string()
+    .required('الزامی')
+    .oneOf([Yup.ref('password'), null], 'اشتباه وارد کردید'),
 })
 const SignUpPage = () => {
-    const [passtype ,setPassType]= useState('password')
-    const changeType =(e)=>{
-        if(e==='password') setPassType('text')
-        if(e==='text') setPassType('password')
-    }
-    const onSubmit =(e)=>{
-        console.log(e);
-    }
-    const formik = useFormik({
-      initialValues,
-      onSubmit,
-      validationSchema
-    })
+  const [passtype, setPassType] = useState('password')
+  const changeType = (e) => {
+    if (e === 'password') setPassType('text')
+    if (e === 'text') setPassType('password')
+  }
+  const onSubmit = (e) => {
+    console.log(e)
+  }
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+    validateOnMount:true 
+  })
   return (
     <Layout>
       <div className={style.signupBody}>
@@ -56,7 +72,12 @@ const SignUpPage = () => {
             placeholder="نام خانوادگی خود را وارد کنید"
             style={style}
           />
-          
+          <InputRadio
+            formik={formik}
+            name="gender"
+            options={genderOption}
+            label="جنسیت"
+          />
           <Input
             formik={formik}
             label="نام کاربری"
@@ -70,7 +91,7 @@ const SignUpPage = () => {
             name="phoneNumber"
             placeholder="شماره خودا را وارد کنید"
             style={style}
-            type='tel'
+            type="tel"
           />
           <Input
             formik={formik}
@@ -92,14 +113,17 @@ const SignUpPage = () => {
           />
           <Input
             formik={formik}
-            type='password'
+            type="password"
             label="تایید رمز عبور"
             name="passwordConfrim"
             style={style}
             placeholder="●●●●●●●●●"
           />
-          
-          <button type="submit" className={style.signupBtn}>
+          <button
+            disabled={!formik.isValid}
+            type="submit"
+            className={style.signupBtn}
+          >
             ثبت نام
           </button>
         </form>

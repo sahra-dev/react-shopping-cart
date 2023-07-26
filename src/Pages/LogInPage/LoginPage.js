@@ -9,30 +9,32 @@ import { Link } from 'react-router-dom'
 const initialValues = {
   userName: '',
   password: '',
-  email : ''
+  email: '',
 }
 const validationSchema = Yup.object({
-    userName: Yup.string().required('*').matches(/^[A-Za-z0-9]+$/ , 'غیرقابل قبول'),
-    password: Yup.string().required('*').matches(/^[a-zA-Z0-9]+$/ , 'غیرقابل قبول'),
-    email: Yup.string().required('*'),
+  userName: Yup.string()
+    .required('الزامی')
+    .matches(/^[A-Za-z0-9]+$/, 'غیرقابل قبول'),
+  password: Yup.string().required('الزامی'),
+  email: Yup.string().required('الزامی'),
 })
 const onSubmit = (e) => {
   console.log(e)
 }
 
 const LoginPage = () => {
-    const [passtype ,setPassType]= useState('password')
-    const changeType =(e)=>{
-        if(e==='password') setPassType('text')
-        if(e==='text') setPassType('password')
-    }
+  const [passtype, setPassType] = useState('password')
+  const changeType = (e) => {
+    if (e === 'password') setPassType('text')
+    if (e === 'text') setPassType('password')
+  }
   const formik = useFormik({
     initialValues,
     onSubmit,
-    validationSchema
+    validationSchema,
+    validateOnMount: true,
   })
   return (
-    
     <Layout>
       <div className={style.loginContainer}>
         <h2> وارد حساب کاربری خود شوید</h2>
@@ -44,14 +46,14 @@ const LoginPage = () => {
             placeholder="نام کاربری خود را وارد کنید"
             style={style}
           />
-            <Input
-              formik={formik} 
-              type='email'
-              name='email'
-              label='ایمیل'
-              placeholder='example@ex.com'
-              style={style}
-            />
+          <Input
+            formik={formik}
+            type="email"
+            name="email"
+            label="ایمیل"
+            placeholder="example@ex.com"
+            style={style}
+          />
           <Input
             formik={formik}
             type={passtype}
@@ -62,8 +64,14 @@ const LoginPage = () => {
             eye={true}
             changeType={changeType}
           />
-          <button type='submit' className={style.loginBtn}>ورود</button>
-          <Link to='/signup'>حساب کاربری ندارید؟ لطفا اینجا کلیک کنید</Link>
+          <button
+            type="submit"
+            className={style.loginBtn}
+            disabled={!formik.isValid}
+          >
+            ورود
+          </button>
+          <Link to="/signup">حساب کاربری ندارید؟ لطفا اینجا کلیک کنید</Link>
         </form>
       </div>
     </Layout>

@@ -6,7 +6,6 @@ const Input = ({
   placeholder,
   label,
   type = 'text',
-  errorStyle,
   min = 'null',
   eye,
   changeType,
@@ -26,10 +25,9 @@ const Input = ({
           min={min}
           {...formik.getFieldProps(name)}
           placeholder={placeholder}
-          className={
+          style={
             formik.touched[name] && formik.errors[name]
-              ? `${style.errorStyle}`
-              : null
+              ?  {border:'1px solid #f58989'} : null
           }
         />
         {eye ?  <span className={style.eyePass} onClick={() => changeType(type)}>

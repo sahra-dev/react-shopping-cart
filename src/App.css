@@ -2,11 +2,15 @@
   font-family: 'Baloo';
   src: url('../public/asstes/fonts/BalooBhaijaan2-Regular.woff') format('woff');
 }
-
-* {
+* ,
+*:after ,
+*:before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+:root{
+  --original-gray:gray;
 }
 html{
   font-size: 62.5%;
