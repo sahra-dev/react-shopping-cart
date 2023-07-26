@@ -1,12 +1,15 @@
 .mainHeader {
-  padding: 1rem;
+  padding: 1.5rem;
   width: 100vw;
-  height: 10rem;
+  height: 12rem;
   background-color: #e2e2e2;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+.mainHeader h2{
+  transform: translate(0,2rem);
 }
 ul {
   margin-top: 1rem;
@@ -56,13 +59,12 @@ a span {
   width: 13rem;
   height: 3rem;
   font-size: 1.3rem;
-  position: absolute;
-  left: 3rem;
   font-family: 'Baloo';
   color: gray;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translate(-25rem);
 }
 .loginSignUp:hover{
   color: #3b3b3b;
@@ -72,7 +74,7 @@ a span {
     font-size: 1.9rem;
   }
   li {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   .activeLink span{
     transform: translate(6rem , -3.5rem);
@@ -83,6 +85,7 @@ a span {
   .loginSignUp{
     width: 11rem;
     left: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    transform: translate(-17rem);
   }
 }

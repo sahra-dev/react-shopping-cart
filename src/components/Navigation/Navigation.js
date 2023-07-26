@@ -9,7 +9,7 @@ const Navigation = () => {
   return (
     <header className={styles.mainHeader}>
       <h2>SaHRa Shopping</h2>
-      <Link to='/' className={styles.loginSignUp} >
+      <Link to='/login' className={styles.loginSignUp} >
         <FiLogIn/> &nbsp; ثبت نام / ورود 
       </Link>
       <nav>

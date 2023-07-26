@@ -1,0 +1,55 @@
+.loginContainer{
+    width: 50%;
+    height: 80vh;
+    background-color:#e2e2e2 ;
+    font-family: 'Baloo';
+    direction: rtl;
+    padding: 2rem;
+    color: gray;
+}
+.loginContainer h2{
+    margin-bottom:2rem;
+    font-size: 1.7rem;
+}
+.loginContainer form{
+    width: 100%;
+}
+
+.label{
+    width: 8rem;
+}
+.loginBtn{
+    all: unset;
+    width: 80%;
+    height: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    background-color:#aaa;
+    margin: 3rem;
+    border: 1px solid #aaa;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.loginBtn:hover{
+    background-color: gray;
+}
+.loginContainer a{
+    font-size: 1.4rem;
+}
+.loginContainer a:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width:800px) {
+    .loginContainer{
+        width: 70%;
+    }
+}
+@media screen and (max-width:500px) {
+    .loginContainer{
+        width: 95%;
+    }
+}
