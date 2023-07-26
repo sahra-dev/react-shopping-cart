@@ -3,7 +3,6 @@ import Layout from '../../components/Layout/Layout'
 import style from './Cart.module.css'
 import { BsFillTrash3Fill, BsFillCartCheckFill } from 'react-icons/bs'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
 const Cart = () => {
@@ -20,7 +19,7 @@ const Cart = () => {
   }
   const totalPricecalculating = () => {
     let total = 0
-    cart.map((p) => {
+    cart.forEach((p) => {
       const oneItem = p.qty * p.offPrice
       total += oneItem
     })
@@ -28,7 +27,7 @@ const Cart = () => {
   }
   const caclulateProfit = () => {
     let profit = 0
-    cart.map((p) => {
+    cart.forEach((p) => {
       const discount = (p.price - p.offPrice) * p.qty
       profit += discount
     })
@@ -124,7 +123,7 @@ const Cart = () => {
                   قیمت قابل پرداخت : {totalPricecalculating()} ${' '}
                 </div>
                 <button className={style.cartTotalBtn}>
-                  <Link to='/checkout'>
+                  <Link to="/checkout">
                     ثبت سفارش <BsFillCartCheckFill />
                   </Link>
                 </button>
