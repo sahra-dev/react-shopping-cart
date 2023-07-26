@@ -3,7 +3,7 @@
   max-width: 1024px;
   padding: 2rem;
   height: 100%;
-  background-color: #e2e2e2;
+  background-color: var(--basic-gray-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -20,9 +20,8 @@
 }
 .cartTitle {
   font-size: 2.5rem;
-  color: #fff;
-  font-family: 'Baloo';
-  text-shadow: 2px 2px 5px #000;
+  color: var(--original-white);
+  text-shadow: 2px 2px 5px var(--original-black);
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -40,7 +39,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: 1px solid #aaaaaa;
+  border-bottom: 1px solid var(--soft-gray);
   padding: 2rem;
 }
 .productCart span {
@@ -60,7 +59,6 @@
 }
 .productCartDesc,
 .priceSection {
-  font-family: 'Baloo';
   width: 14rem;
   height: 80%;
   display: flex;
@@ -72,20 +70,19 @@
 }
 .productCartDesc .productName {
   font-size: 1.9rem;
-  color: #4d4d4d;
+  color: var(--main-black);
 }
 .productCartDesc .productSupDesc {
   font-size: 1.3rem;
-  color: gray;
+  color: var(--original-gray);
 }
 .priceSectionPrice {
   font-size: 2rem;
-  color: #3d3d3d;
 }
 .priceSectionPriceLine {
   text-decoration: line-through;
   font-size: 1.7rem;
-  color: gray;
+  color: var(--original-gray);
 }
 .priceSectionDiscount {
   font-size: 1.2rem;
@@ -93,7 +90,7 @@
 }
 .priceSectionPriceWithDiscount {
   font-size: 2rem;
-  color: #3d3d3d;
+  color: var(--original-gray);
 }
 .productCartBtns {
   display: flex;
@@ -141,29 +138,28 @@
   font-size: 1.5rem;
   margin-top: 5rem;
   font-family: 'Baloo';
-  color: gray;
+  color: var(--original-gray);
   margin-bottom: 3rem;
 }
 .cartTotal {
   width: 100%;
-  height: 18rem;
+  height: 20rem;
   margin-right: 2rem;
-  border: 2px solid gray;
+  border: 2px solid var(--original-gray);
   border-radius: 2rem;
   padding: 2rem;
-  font-size: 1.5rem;
-  color: gray;
+  font-size: 1.3rem;
+  color: var(--original-gray);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  font-family: 'Baloo';
 }
-.cartTotal .totalPrice{
+.cartTotal .totalPrice {
   width: 100%;
-  border-top: 1px solid gray;
+  border-top: 1px solid var(--original-gray);
   padding: 1rem;
-  color: #52525b;
+  color: var(--main-black);
 }
 .cartTotalBtn {
   all: unset;
@@ -171,25 +167,25 @@
   width: 100%;
   height: 3rem;
   font-size: 1.6rem;
-  border: 1px solid #52525b;
-  color: #52525b;
+  border: 1px solid var(--original-gray);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
 }
 .cartTotalBtn a {
+  color: var(--main-black);
   width: 100%;
   height: 100%;
   text-align: center;
 }
-.cartTotalBtn:hover{
-  color: #fff;
-  background-color: #52525b;
+.cartTotalBtn:hover a {
+  color: var(--original-white);
+  background-color: var(--original-gray);
 }
-.cartTotalBtn:focus{
-  color: #fff;
-  background-color: #52525b;
+.cartTotalBtn:focus a {
+  color: var(--original-white);
+  background-color: var(--original-gray);
 }
 
 @media screen and (max-width: 1000px) {
@@ -221,7 +217,7 @@
     text-align: center;
   }
   .productCartDesc .productName {
-    font-size: 1.5rem
+    font-size: 1.5rem;
   }
   .productCartDesc .productSupDesc {
     font-size: 1rem;
@@ -250,13 +246,13 @@
     width: 2rem;
     height: 2rem;
   }
-  .deleteBtn ,
-  .productCartBtnsQty ,
-  .incBtn ,
+  .deleteBtn,
+  .productCartBtnsQty,
+  .incBtn,
   .decBtn {
     font-size: 1.5rem;
   }
-  .productCart{
+  .productCart {
     padding: 0;
   }
   .cartTotal {
@@ -266,8 +262,7 @@
     font-size: 1.4rem;
   }
 }
-@media screen and (max-width: 500px){
-
+@media screen and (max-width: 500px) {
   .productCartDesc,
   .priceSection {
     width: 7rem;

@@ -1,4 +1,3 @@
-// import bcrypt from "bcryptjs";
 
 export const products = [
   {
@@ -87,20 +86,3 @@ export const products = [
       'https://s6.uupload.ir/files/luis-felipe-lins-j2-waqdckus-unsplash_ku8a.jpg',
   },
 ]
-
-// export const users = [
-//   {
-//     name: "Saheb mohamadi",
-//     email: "saheb.example@gmail.com",
-//     password: bcrypt.hashSync("12345", 8),
-//     phoneNumber: "09180000001",
-//     isAdmin: true,
-//   },
-//   {
-//     name: "John",
-//     email: "user2@example.com",
-//     password: bcrypt.hashSync("1234", 8),
-//     isAdmin: false,
-//     phoneNumber: "09181230002",
-//   },
-// ];

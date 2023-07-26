@@ -18,15 +18,14 @@
   margin-right: 2rem;
   height: 2rem;
   padding: 1rem 2rem;
-  font-family: 'Baloo';
-  background-color: #fff;
-  border: 1px solid #fff;
+  background-color: var(--original-white);
+  border: 1px solid var(--original-white);
   border-radius: 2rem;
   font-size: 1.3rem;
   direction: rtl;
 }
 .textInput input:focus{
-  border: 1px solid gray;
+  border: 1px solid var(--original-gray);
 }
 
 .eyePass {
@@ -35,16 +34,16 @@
   font-size: 2.2rem;
   transform: translate(3rem, 0.7rem);
   cursor: pointer;
-  color: #aaa;
+  color: var(--soft-gray);
   position: absolute;
 }
 .eyePass:hover {
-  color: gray;
+  color: var(--original-gray);
 }
 
 .error {
   font-size: 1rem;
-  color: red;
+  color: var(--error-color);
   position: absolute;
   transform: translate(0rem, 2rem);
 }
@@ -71,7 +70,6 @@
   transform: translate(0.7rem);
 }
 .formControl {
-  font-family: 'Baloo';
   font-size: 2rem;
   line-height: 1.1;
   display: grid;
@@ -83,7 +81,7 @@ input[type='radio'] {
   -webkit-appearance: none;
   appearance: none;
   /* For iOS < 15 to remove gradient background */
-  background-color: #fff;
+  background-color: var(--original-white);
   /* Not removed via appearance */
   margin: 0;
   color: currentColor;

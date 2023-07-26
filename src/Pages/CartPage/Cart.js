@@ -118,7 +118,7 @@ const Cart = () => {
                 })}
               </div>
               <section className={style.cartTotal}>
-                <div> تعداد محصولات در سبد خرید : {total} </div>
+                <div> محصولات در سبد خرید : {total} </div>
                 <div> سود شما از این خرید : {caclulateProfit()} $ </div>
                 <div className={style.totalPrice}>
                   قیمت قابل پرداخت : {totalPricecalculating()} ${' '}

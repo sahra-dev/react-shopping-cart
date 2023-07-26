@@ -18,7 +18,6 @@ const HomePage = () => {
   const linkToCartPage = ()=>{
     history.push('/cart')
   }
-  
   return (
     <Layout>
       <span className={style.toastify}>

@@ -1,11 +1,11 @@
 .signupBody{
     width: 60%;
     height: 100%;
-    background-color:#e2e2e2 ;
+    background-color:var(--basic-gray-color) ;
     font-family: 'Baloo';
     direction: rtl;
     padding: 2rem;
-    color: gray;
+    color: var(--original-gray);
 }
 .signupBody form{
     width: 100%;
@@ -21,15 +21,15 @@
     height: 1.5rem;
     padding: 1rem;
     cursor: pointer;
-    background-color:#aaa;
+    background-color:var(--soft-gray);
     margin: 3rem;
-    border: 1px solid #aaa;
+    border: 1px solid var(--soft-gray);
     border-radius: 1rem;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: var(original-white);
 }
 .signupBtn:disabled{
     cursor: not-allowed;

@@ -2,7 +2,7 @@
   padding: 1.5rem;
   width: 100vw;
   height: 12rem;
-  background-color: #e2e2e2;
+  background-color:var(--basic-gray-color);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -29,7 +29,7 @@ a {
   border-radius: 0.2rem;  
 }
 .activeLink {
-  background-color: #fff;
+  background-color: var(--original-white);
 }
 .activeLink span{
   transform: translate(7rem , -3.8rem);
@@ -38,13 +38,13 @@ a {
 h2 {
   font-size: 2.5rem;
   text-align: center;
-  color: #fff;
-  text-shadow: 1px 1px 4px #000;
+  color:var(--original-white);
+  text-shadow: 1px 1px 4px var(--original-black);
 }
 a span {
   width: 2rem;
   height: 2rem;
-  background-color: #fff;
+  background-color: var(--original-white);
   border-radius: 100%;
   padding: 0.1rem 0.7rem;
   position: absolute;
@@ -59,15 +59,14 @@ a span {
   width: 13rem;
   height: 3rem;
   font-size: 1.3rem;
-  font-family: 'Baloo';
-  color: gray;
+  color: var(--original-gray);
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translate(-25rem);
 }
 .loginSignUp:hover{
-  color: #3b3b3b;
+  color: var(--main-black);
 }
 @media screen and (max-width: 600px) {
   h2 {

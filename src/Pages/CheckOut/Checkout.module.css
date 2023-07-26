@@ -1,105 +1,103 @@
-.checkoutBody{
-    width: 50%;
-    height: auto;
-    min-height: 10rem;
-    background-color: #e2e2e2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    direction: rtl;
-    font-family: 'Baloo';
+.checkoutBody {
+  width: 50%;
+  height: auto;
+  min-height: 10rem;
+  background-color: var(--basic-gray-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  direction: rtl;
 }
-.checkoutBody h2{
-    margin: 2rem;
+.checkoutBody h2 {
+  margin: 2rem;
 }
-.productBody{
-    height: 6rem;
-    width: 100%;
-    border-bottom: 1px solid gray;
-    padding: 1rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.productBody {
+  height: 6rem;
+  width: 100%;
+  border-bottom: 1px solid var(--original-gray);
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-.productNumber{
-    width: 3rem;
-    height: 3rem;
-    background-color: #fff;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8rem;
-    color: gray;
-    margin-left: 2rem;
+.productNumber {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--original-white);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: var(--original-gray);
+  margin-left: 2rem;
 }
-.productName{
-    width: 15rem;
-    font-size: 1.5rem;
-    color: #52525b;
+.productName {
+  width: 15rem;
+  font-size: 1.5rem;
+  color: var(--main-black);
 }
-.productQty{
-    width: 10rem;
+.productQty {
+  width: 10rem;
+  font-size: 1.4rem;
+  color: var(--main-black);
+}
+.productDisc {
+  font-size: 1.4rem;
+  color: var(--original-gray);
+}
+.checkoutBodyBtn {
+  cursor: pointer;
+  margin: 3rem;
+  width: 12rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  color: var(--main-black);
+  border: 1px solid var(--soft-gray);
+  border-radius: 0.5rem;
+  font-family: 'Baloo';
+}
+.checkoutBodyBtn:hover {
+  background-color: var(--soft-gray);
+  color: var(--original-white);
+}
+@media screen and (max-width: 900px) {
+  .checkoutBody {
+    width: 65%;
+  }
+  .productName {
+    width: 8rem;
+    font-size: 1.3rem;
+  }
+  .productQty {
+    width: 6rem;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .productNumber {
+    width: 2rem;
+    height: 2rem;
     font-size: 1.4rem;
-    color: #52525b;
-    
-}
-.productDisc{
+  }
+  .checkoutBody {
+    width: 85%;
+  }
+  .productName {
+    width: 8rem;
     font-size: 1.4rem;
-    color: gray;
-}
-.checkoutBodyBtn{
-    cursor: pointer;
-    margin: 3rem;
-    width: 12rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    color: #52525b;
-    border: 1px solid #52525b;
-    border-radius: 0.5rem;
-    font-family: 'Baloo';
-}
-.checkoutBodyBtn:hover{
-    background-color: #52525b;
-    color: #fff;
-}
-@media screen and (max-width : 900px) {
-    .checkoutBody{
-        width: 65%;
-    }
-    .productName{
-        width: 8rem;
-        font-size: 1.3rem;
-    }
-    .productQty{
-        width:6rem;
-        font-size: 1.3rem;
-    }
-}
-@media screen and (max-width : 500px) {
-    .productNumber{
-        width: 2rem;
-        height: 2rem;
-        font-size: 1.4rem;
-    }
-    .checkoutBody{
-        width: 85%;
-    }
-    .productName{
-        width: 8rem;
-        font-size: 1.4rem;
-    }
-    .productQty{
-        width:6rem;
-        font-size: 1.3rem;
-    }
-    .productDisc{
-        font-size: 1.2rem;
-    }
-    .checkoutBodyBtn{
-        width: 9rem;
-        height: 2rem;
-        font-size: 1.2rem;
-    }
+  }
+  .productQty {
+    width: 6rem;
+    font-size: 1.3rem;
+  }
+  .productDisc {
+    font-size: 1.2rem;
+  }
+  .checkoutBodyBtn {
+    width: 9rem;
+    height: 2rem;
+    font-size: 1.2rem;
+  }
 }
