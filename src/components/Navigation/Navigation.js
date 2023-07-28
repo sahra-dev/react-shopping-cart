@@ -21,7 +21,7 @@ const Navigation = () => {
           </li>
           <li>
             <NavLink to="/cart" activeClassName={styles.activeLink}>
-             سبد خرید <span>{total}</span>
+             سبد خرید {total ? <span>{total}</span> : ''}
             </NavLink> 
           </li>
         </ul>
