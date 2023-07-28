@@ -75,7 +75,7 @@
     font-size: 1.3rem;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .productNumber {
     width: 2rem;
     height: 2rem;
