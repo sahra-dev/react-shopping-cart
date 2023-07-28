@@ -268,4 +268,8 @@
     width: 7rem;
     text-align: center;
   }
+  .productCartBtns button {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
