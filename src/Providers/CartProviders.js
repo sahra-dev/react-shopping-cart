@@ -6,7 +6,7 @@ const CartContextDispatcher = createContext()
 
 const initialState = {
   cart: [],
-  total: 5,
+  total: 0,
 }
 const CartProvider = ({ children }) => {
   const [cart, dispatch] = useReducer(cartReducer, initialState)
